@@ -1,0 +1,208 @@
+:root {
+  --primary: #4f46e5;
+  --secondary: #3730a3;
+  --third: #f75a68;
+  --tom-1: #161618;
+  --tom-2: #202024;
+  --tom-3: #323238;
+  --tom-4: #8d8d99;
+  --tom-5: #c4c4cc;
+  --tom-6: #e1e1e1;
+  --white: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'inter';
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: var(--tom-1);
+  color: var(--white);
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:not(.Tarefa):not(.marker) {
+  border-radius: 8px;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  transition: background .3s ease;
+  color: var(--white);
+  padding: 8px 12px;
+}
+
+button:hover:not(.Tarefa):not(.marker) {
+  background: var(--secondary);
+}
+
+.marker {
+  border: none;
+  background: none;
+  color: var(--tom-6);
+  transition: border .3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+
+.marker:hover {
+  color: var(--third);
+}
+
+.check {
+  transition: border .3s ease;
+  border: 1px solid var(--tom-6);
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check.active {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+input {
+  background: var(--tom-1);
+  border: 1px solid var(--tom-2);
+  padding: 8px 12px;
+  color: var(--white);
+  border-radius: 8px;
+}
+
+input:hover,
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary);
+}
+
+.App {
+  width: min(700px, 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 0 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.porcentagem-tarefas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.porcentagem-tarefas .numeros {
+  display: flex;
+  justify-content: space-between;
+}
+
+.barra-porcentagem {
+  height: 5px;
+  background: var(--tom-3);
+  border-radius: 5px;
+}
+
+.barra-porcentagem .barra-concluido {
+  background: var(--primary);
+  height: 100%;
+  border-radius: 5px;
+  transition: all .3s ease;
+}
+
+.Tarefa {
+  border: 0;
+  color: var(--white);
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--tom-2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: filter .3s ease;
+}
+
+.Tarefa:hover {
+  filter: brightness(.9);
+}
+
+span {
+  transition: color .3s ease;
+}
+
+.Modal {
+  background: rgba(0, 0, 0, .75);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal .container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 8px;
+  background: var(--tom-2);
+  padding: 20px;
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btns {
+  display: flex;
+  gap: 8px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--tom-2);
+  padding: 20px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
